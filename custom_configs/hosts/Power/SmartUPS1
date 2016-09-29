@@ -1,0 +1,15 @@
+define host {
+	host_name		Smartups1
+	use			generic-host
+	alias			UPS
+	address			10.150.2.7
+	parents			Tunnel
+	hostgroups		Internal,main_rack,UPS
+	
+	_snmp_checks		battery_capacity, \
+				battery_temperature, \
+				voltage_output, \
+				voltage_input, \
+				remaining_rumtime, \
+				current_amps
+}
