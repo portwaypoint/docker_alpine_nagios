@@ -1,0 +1,21 @@
+define service{
+	host_name               Smartups2
+	service_description     $KEY$
+	check_command           $KEY$
+	max_check_attempts      5
+	check_interval          5
+	retry_interval          3
+	aggregation		battery_checks
+	duplicate_foreach	_snmp_checks
+}
+
+define service{
+	host_name               Smartups1
+	service_description     $KEY$
+	check_command           $KEY$
+	max_check_attempts      5
+	check_interval          5
+	retry_interval          3
+	aggregation		battery_checks
+	duplicate_foreach	_snmp_checks
+}
